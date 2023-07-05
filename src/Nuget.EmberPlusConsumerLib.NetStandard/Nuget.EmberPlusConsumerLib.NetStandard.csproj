@@ -20,8 +20,14 @@
     <RepositoryUrl>https://github.com/roog/nuget-ember-plus-consumer-lib</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
 
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+
     <NoWarn>CA2007;CA1307;CA1031;CS3021</NoWarn>
   </PropertyGroup>
+
+  <ItemGroup>
+      <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\EmberLibConsumer.net\Lawo.EmberPlusSharp\Lawo.EmberPlusSharp.csproj">
