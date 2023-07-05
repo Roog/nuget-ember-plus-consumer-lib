@@ -9,7 +9,9 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
@@ -28,5 +30,8 @@ jobs:
         name: EmberPlus.ConsumerLib
         path: ./src/Nuget.EmberPlusConsumerLib.NetStandard/bin/PackNuGet/EmberPlus.ConsumerLib.${{ github.event.release.tag_name }}.nupkg
 
-    - name: Publish NuGet Package
+    - name: Publish NuGet Package [GitHub]
       run: dotnet nuget push ./src/Nuget.EmberPlusConsumerLib.NetStandard/bin/PackNuGet/EmberPlus.ConsumerLib.${{ github.event.release.tag_name }}.nupkg --skip-duplicate --no-symbols true -k ${{secrets.GITHUB_TOKEN}} -s https://nuget.pkg.github.com/roog/index.json
+
+    - name: Publish Nuget Package [NuGet]
+      run: dotnet nuget push ./src/Nuget.EmberPlusConsumerLib.NetStandard/bin/PackNuGet/EmberPlus.ConsumerLib.${{ github.event.release.tag_name }}.nupkg --skip-duplicate --no-symbols true --api-key ${{ secrets.NUGETORG_API_KEY }} --source https://api.nuget.org/v3/index.json
