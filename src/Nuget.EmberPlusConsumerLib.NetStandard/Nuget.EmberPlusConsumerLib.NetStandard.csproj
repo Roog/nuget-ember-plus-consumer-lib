@@ -3,9 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
 
-    <PackageId>SR.EmberPlusConsumerLib.NetStandard</PackageId>
+    <PackageId>EmberPlus.ConsumerLib</PackageId>
     <Description>C# .NET Standard consumer library for the EmBER+ protocol.</Description>
-    <Product>SR.EmberPlusConsumerLib.NetStandard</Product>
+    <Product>EmberPlus.ConsumerLib</Product>
     <Authors>Lawo, Roger Sandholm, Fredrik Bergholtz</Authors>
     <Company />
     <Version>0.0.1</Version>
@@ -17,7 +17,7 @@
     <Configurations>Debug;Release;PackNuGet</Configurations>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
 
-    <RepositoryUrl>https://github.com/sverigesradio/nuget-ember-plus-consumer-lib</RepositoryUrl>
+    <RepositoryUrl>https://github.com/roog/nuget-ember-plus-consumer-lib</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
 
     <NoWarn>CA2007;CA1307;CA1031;CS3021</NoWarn>
