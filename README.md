@@ -66,4 +66,4 @@ The code is licensed under the BSD 3-clause license.
 
 ## Build
 
-![Workflow](../../workflows/ContinuousIntegration%20Release%20NuGet/badge.svg)
+![Workflow](../../../workflows/ContinuousIntegration%20Release%20NuGet/badge.svg)
