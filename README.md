@@ -58,6 +58,12 @@ Distributed under the Boost Software License, Version 1.0.
 
 There has been some modifications to the source code for .NET Standard adaption.
 
+```code
+NuGet Ember Consumer Library
+Copyright (c) 2023 Roger Sandholm & Fredrik Bergholtz, Stockholm, Sweden
+The code is licensed under the BSD 3-clause license.
+```
+
 ## Build
 
-![Workflow](workflows/ContinuousIntegration%20Release%20NuGet/badge.svg)
+![Workflow](../../workflows/ContinuousIntegration%20Release%20NuGet/badge.svg)
