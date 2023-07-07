@@ -38,6 +38,18 @@ A library that gives you the possibility to create an EmBER+ consumer.
 
 3. Rock on with your creations
 
+There is some more helper methods to use:
+
+```csharp
+
+// Helps to create a TcpClient and an S101Client used for consumer connection.
+S101Extension.CreateClient("localhost", 9001);
+
+// Create an EmBER+ consumer. Add your ILogger, if set to LogLevel.Debug the connection also logs.
+var device = DeviceConsumerConnection(ILogger logger);
+device.Connect("localhost", 9001);
+```
+
 ## Soluton contains
 
 - Lawo - Common shared classes (Required by main library) - .NET Standard 2.1, .NET Framework 4.5, .NET Framework 4.8

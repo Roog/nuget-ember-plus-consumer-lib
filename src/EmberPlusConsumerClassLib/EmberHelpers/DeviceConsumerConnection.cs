@@ -60,6 +60,11 @@ namespace EmberPlusConsumerClassLib.EmberHelpers
 
         public bool IsConnectedToProvider { get; private set; } = false;
 
+        /// <summary>
+        /// Create an EmBER+ consumer. Add your <see cref="ILogger"/>, if set to <see cref="LogLevel.Debug"/> the connection
+        /// also logs.
+        /// </summary>
+        /// <param name="logger"></param>
         public DeviceConsumerConnection(ILogger logger) {
             _logger = logger;
         }
@@ -95,18 +100,10 @@ namespace EmberPlusConsumerClassLib.EmberHelpers
                             Consumer.Root.ChildrenRetrievalPolicy = ChildrenRetrievalPolicy.DirectOnly;
                             await Consumer.SendAsync();
 
-                            //_ = (Consumer?.Root.IsOnline);
-
                             _logger.LogInformation($"Connected to EmBER+ provider on '{_providerHost}:{_providerPort}'");
                             IsConnectedToProvider = true;
                             OnConnectionChanged?.Invoke($"{_providerHost}:{_providerPort}", IsConnectedToProvider);
                             break;
-
-                            // Check identity node for hardware model
-                            //var identity = await ParseProductIdentity(consumer.Root, consumer);
-                            //_logger.LogDebug($"Setting up connection for product: {identity.Product}");
-                            //IMixerProvider provider = await Factory(identity, host, port, consumer);
-
                         }
                         catch (SocketException ex)
                         {
@@ -128,6 +125,9 @@ namespace EmberPlusConsumerClassLib.EmberHelpers
             }, _cancellationTokenSource.Token);
         }
 
+        /// <summary>
+        /// Stop the provider connection. <see cref="Consumer.ConnectionLost"/> is not triggered but <see cref="OnConnectionChanged"/> is.
+        /// </summary>
         public void Disconnect()
         {
             IsConnectedToProvider = false;

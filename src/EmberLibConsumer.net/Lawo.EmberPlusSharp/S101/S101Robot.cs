@@ -198,6 +198,7 @@ namespace Lawo.EmberPlusSharp.S101
 
                 // We're converting to XML and back again to normalize the payload. This could be done much more
                 // efficiently by a dedicated method, which has yet to be implemented.
+                // TODO: Improve this parsing and re:encoding
                 var actualXml = this.ToXml(e.GetPayload());
                 var actual = this.FromXml(actualXml);
 

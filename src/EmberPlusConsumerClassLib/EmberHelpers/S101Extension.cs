@@ -41,6 +41,13 @@ namespace EmberPlusConsumerClassLib.EmberHelpers
         private static readonly int S101ClientTimeout = 6000;
         private static readonly int S101ClientBufferSize = 8192;
 
+        /// <summary>
+        /// Helps to create a <see cref="TcpClient"/> and an <see cref="S101Client"/> used for consumer connection.
+        /// </summary>
+        /// <param name="host"></param>
+        /// <param name="port"></param>
+        /// <param name="logger"></param>
+        /// <returns></returns>
         public static async Task<S101Client> CreateClient(string host, int port, ILogger logger)
         {
             TcpClient tcpClient = new TcpClient();
