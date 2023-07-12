@@ -20,7 +20,7 @@
     <RepositoryUrl>https://github.com/roog/nuget-ember-plus-consumer-lib</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
 
-    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReadme>README.md</PackageReadme>
 
     <NoWarn>CA2007;CA1307;CA1031;CS3021</NoWarn>
 
